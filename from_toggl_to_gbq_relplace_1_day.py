@@ -30,7 +30,7 @@ def replace_data(date):
 
         df = client.query(query, project='project-name', job_config=job_config)
 
-    # Get data from Toggle
+    # Get data from Toggl
     def report(api_key, workspace_id, date):
         global toggl_report
 
