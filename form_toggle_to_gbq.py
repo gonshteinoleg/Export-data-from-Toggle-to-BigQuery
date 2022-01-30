@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 client = bigquery.Client.from_service_account_json(
-    'service-account.json')
+    'secret-file.json')
 
 
 # Get data from Toggle
@@ -67,6 +67,6 @@ toggl_report_all['time'] = toggl_report_all['time'].round()
 
 # Load data to BigQuery
 df_dict = toggl_report_all.to_dict('r')
-table = client.get_table('account-name.dataset-name.table-name') # past your path to table
+table = client.get_table('project-name.dataset-name.table-name') # insert your path to table
 rows_to_insert = df_dict
 client.insert_rows(table, rows_to_insert)
