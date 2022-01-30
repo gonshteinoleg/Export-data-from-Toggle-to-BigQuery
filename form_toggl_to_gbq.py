@@ -14,7 +14,7 @@ client = bigquery.Client.from_service_account_json(
     'secret-file.json')
 
 
-# Get data from Toggle
+# Get data from Toggl
 def report(api_key, workspace_id):
     global toggl_report
 
